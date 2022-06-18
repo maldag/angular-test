@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BookStoreService } from '../shared/book-store.service';
 import { Book } from '../shared/book';
 
 @Component({
@@ -7,12 +9,14 @@ import { Book } from '../shared/book';
   styleUrls: ['./book-details.component.css']
 })
 export class BookDetailsComponent implements OnInit {
-  @Input() book?: Book;
+  book?: Book;
   @Output() showListEvent = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(private bs: BookStoreService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const params = this.route.snapshot.paramMap;
+    this.book=this.bs.getSingle(params.get('isbn')||'');
   }
 
   getRating(num: number) {
