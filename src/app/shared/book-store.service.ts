@@ -39,6 +39,9 @@ export class BookStoreService {
     ];
    }
    getAll(): Book[] {
+     // Angular Buch: Kapitel 9: Ausgabe von Büchern auf Konsole
+     // die dann über die Google Chrome Entwicklerkonsole betrachtet werden können.
+     //console.table(this.books);
      return this.books;
    }
    getSingle(isbn: string): Book | undefined {
