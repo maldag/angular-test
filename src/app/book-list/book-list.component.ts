@@ -16,9 +16,6 @@ export class BookListComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.books = this.bs.getAll();
-    // Angular Buch, Kapitel 9: Debugger Statement fügt Breakpoint ein
-    // Im Chrome Debugger würde man dann im Debugger landen Strg+Shift+I
-    //debugger;
+    this.bs.getAll().subscribe(res => this.books=res);
   }
 }
