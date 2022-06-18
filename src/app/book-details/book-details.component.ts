@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookStoreService } from '../shared/book-store.service';
 import { Book } from '../shared/book';
@@ -10,8 +10,6 @@ import { Book } from '../shared/book';
 })
 export class BookDetailsComponent implements OnInit {
   book?: Book;
-  @Output() showListEvent = new EventEmitter<any>();
-
   constructor(private bs: BookStoreService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -22,9 +20,4 @@ export class BookDetailsComponent implements OnInit {
   getRating(num: number) {
     return new Array(num);
   }
-
-  showBookList() {
-    this.showListEvent.emit();
-  }
-
 }
