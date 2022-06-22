@@ -12,3 +12,7 @@ ESLint global installieren:
 
 `sudo npm install -g eslint`
  
+## Open API
+
+<https://oai.github.io/Documentation/best-practices.html>
+Vgl. mit Protobuf ?
