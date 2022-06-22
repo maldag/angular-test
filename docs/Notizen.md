@@ -16,3 +16,11 @@ ESLint global installieren:
 
 <https://oai.github.io/Documentation/best-practices.html>
 Vgl. mit Protobuf ?
+
+## Retry mit HTTP
+
+Schlägt ein Request fehl, so kann dies mittels `retry()` neu probiert werden.
+Manchmal ist es aber besser, die Zeit zwischen den Anfragen anzupassen.
+
+* Exponential Backoff: <https://medium.com/angular-in-depth/power-of-rxjs-when-using-exponential-backoff-a4b8bde276b0>
+* Safe HTTP Calls with RxJS: <https://blog.strongbrew.io/safe-http-calls-with-rxjs/>
